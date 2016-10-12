@@ -12,6 +12,8 @@ set expandtab
 set tabstop=2
 " 行番号を表示する
 set number
+" 自動インデントでずれる幅
+set shiftwidth=2
 
 " deinの定義
 if &compatible
