@@ -46,6 +46,9 @@ nnoremap s+ <C-w>+
 " 高さを減らす
 nnoremap s- <C-w>-
 
+" ウィンドウを閉じる
+nnoremap sq :<C-u>q<CR>
+
 " deinの定義
 if &compatible
   set nocompatible
