@@ -2,10 +2,15 @@
 set noswapfile
 " カーソルの行列表示
 set ruler
+
 " 検索結果のハイライト表示
 set hlsearch
+" ESCを2回押下でハイライト解除
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
 " 暗い背景色に合わせた配色
 set background=dark
+
 " タブ入力を空白入力に置き換える
 set expandtab
 " タブを挿入した時のスペース数
@@ -14,6 +19,24 @@ set tabstop=2
 set number
 " 自動インデントでずれる幅
 set shiftwidth=2
+
+" ファイル名表示
+set statusline=%F
+" 変更チェック表示
+set statusline+=%m
+" ここの設定以降は右寄せ表示
+set statusline+=%=
+" ファイルエンコーディング
+set statusline+=[ENC=%{&fileencoding}]
+" ファイルフォーマット
+set statusline+=[FORMAT=%{&fileformat}]
+" ステータスラインを常に表示
+set laststatus=2
+
+" 改行コード(LF)
+set fileformat=unix
+" ファイルエンコーディング
+set encoding=utf-8
 
 " 標準のsキーを打ち消す
 nnoremap s <Nop>
