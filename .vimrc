@@ -2,7 +2,8 @@
 set noswapfile
 " カーソルの行列表示
 set ruler
-
+" インクリメンタルサーチの有効化
+set incsearch
 " 検索結果のハイライト表示
 set hlsearch
 " ESCを2回押下でハイライト解除
