@@ -30,6 +30,10 @@ set statusline+=%=
 set statusline+=[ENC=%{&fileencoding}]
 " ファイルフォーマット
 set statusline+=[FORMAT=%{&fileformat}]
+" BOM表示
+" 0:BOMなし
+" 1:BOMあり
+set statusline+=[BOM=%{&bomb}]
 " ステータスラインを常に表示
 set laststatus=2
 
