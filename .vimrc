@@ -77,6 +77,15 @@ nnoremap s- <C-w>-
 " ウィンドウを閉じる
 nnoremap sq :<C-u>q<CR>
 
+" タブ
+set showtabline=2
+" 新規タブ
+nnoremap st :<C-u>tabnew<CR>
+" 次のタブに切替
+nnoremap sn gt
+" 前のタブに切替
+nnoremap sp gT
+
 " deinの定義
 if &compatible
   set nocompatible
