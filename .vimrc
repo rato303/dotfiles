@@ -97,6 +97,7 @@ call dein#begin('~/.vim/dein')
 call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/unite.vim')
+call dein#add('MaxMEllon/vim-jsx-pretty')
 
 call dein#end()
 
