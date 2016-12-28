@@ -102,6 +102,8 @@ call dein#add('MaxMEllon/vim-jsx-pretty')
 call dein#add('scrooloose/nerdtree')
 map <C-n> :NERDTreeToggle<CR>
 
+call dein#add('Yggdroot/indentLine')
+
 call dein#end()
 
 filetype plugin indent on
