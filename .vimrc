@@ -99,10 +99,22 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('MaxMEllon/vim-jsx-pretty')
 
+call dein#add('Yggdroot/indentLine')
+
+" ファイルツリー表示用プラグイン
 call dein#add('scrooloose/nerdtree')
 map <C-n> :NERDTreeToggle<CR>
 
-call dein#add('Yggdroot/indentLine')
+" ウィンドウリサイズを連続で行えるようにvim-submodeで制御
+call dein#add('kana/vim-submode')
+call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+call submode#map('bufmove', 'n', '', '<', '<C-w><')
+call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 call dein#end()
 
