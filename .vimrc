@@ -62,6 +62,18 @@ nnoremap sk <C-w>k
 " 右に移動
 nnoremap sl <C-w>l
 
+" ウィンドウを移動する
+" 左に移動
+nnoremap sH <C-w>H
+" 下に移動
+nnoremap sJ <C-w>J
+" 上に移動
+nnoremap sK <C-w>K
+" 右に移動
+nnoremap sL <C-w>L
+" 回転
+nnoremap sr <C-w>r
+
 " カレントウィンドウの大きさを変える
 " 大きさを揃える
 nnoremap s= <C-w>=
