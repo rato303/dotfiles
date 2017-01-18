@@ -8,6 +8,8 @@ set incsearch
 set hlsearch
 " ESCを2回押下でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" ヤンクをクリップボードに自動的にコピー
+set clipboard=unnamed
 
 " 暗い背景色に合わせた配色
 set background=dark
