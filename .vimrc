@@ -106,30 +106,39 @@ if &compatible
 endif
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin('~/.vim/dein')
+let s:dein_dir = expand('~/.vim/dein')
+let s:toml_dir = expand('~/.vim/dein/toml')
 
-call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/unite.vim')
-call dein#add('MaxMEllon/vim-jsx-pretty')
+if dein#load_state(s:dein_dir)
+  call dein#begin(s:dein_dir)
+  " Load TOML
+  let s:toml = s:toml_dir . '/plugins.toml'
+  call dein#load_toml(s:toml, {'lazy': 0})
+  " finalize
+  call dein#end()
+  call dein#save_state()
+endif
 
-call dein#add('Yggdroot/indentLine')
+if dein#check_install()
+  call dein#install()
+endif
 
 " ファイルツリー表示用プラグイン
-call dein#add('scrooloose/nerdtree')
-map <C-n> :NERDTreeToggle<CR>
-
+if dein#check_install(['vim-submode'])
+else
+  map <C-n> :NERDTreeToggle<CR>
+endif
 " ウィンドウリサイズを連続で行えるようにvim-submodeで制御
-call dein#add('kana/vim-submode')
-call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
-call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
-call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
-call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
-call submode#map('bufmove', 'n', '', '>', '<C-w>>')
-call submode#map('bufmove', 'n', '', '<', '<C-w><')
-call submode#map('bufmove', 'n', '', '+', '<C-w>+')
-call submode#map('bufmove', 'n', '', '-', '<C-w>-')
-
-call dein#end()
+if dein#check_install(['vim-submode'])
+else
+  call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
+  call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
+  call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
+  call submode#enter_with('bufmove', 'n', '', 's-', '<C-w>-')
+  call submode#map('bufmove', 'n', '', '>', '<C-w>>')
+  call submode#map('bufmove', 'n', '', '<', '<C-w><')
+  call submode#map('bufmove', 'n', '', '+', '<C-w>+')
+  call submode#map('bufmove', 'n', '', '-', '<C-w>-')
+endif
 
 filetype plugin indent on
